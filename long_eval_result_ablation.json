@@ -1,0 +1,7 @@
+{
+  "completed_and_safe": 22,
+  "complete_but_unsafe": 11,
+  "incomplete": 5,
+  "reject": 12,
+  "total": 50
+}

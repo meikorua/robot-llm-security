@@ -1,0 +1,111 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "values": [
+        {"model": "Lota-Bench", "metric": "ER", "value": 0.89},
+        {"model": "Lota-Bench", "metric": "Rej", "value": 0.0},
+        {"model": "Lota-Bench", "metric": "SR(LLM)", "value": 0.38},
+        {"model": "Lota-Bench", "metric": "SR(goal)", "value": 0.60},
+        
+        {"model": "LLM-Planner", "metric": "ER", "value": 0.75},
+        {"model": "LLM-Planner", "metric": "Rej", "value": 0.0},
+        {"model": "LLM-Planner", "metric": "SR(LLM)", "value": 0.46},
+        {"model": "LLM-Planner", "metric": "SR(goal)", "value": 0.40},
+        
+        {"model": "CoELA", "metric": "ER", "value": 0.33},
+        {"model": "CoELA", "metric": "Rej", "value": 0.0},
+        {"model": "CoELA", "metric": "SR(LLM)", "value": 0.09},
+        {"model": "CoELA", "metric": "SR(goal)", "value": 0.16},
+        
+        {"model": "MLDT", "metric": "ER", "value": 0.73},
+        {"model": "MLDT", "metric": "Rej", "value": 0.05},
+        {"model": "MLDT", "metric": "SR(LLM)", "value": 0.69},
+        {"model": "MLDT", "metric": "SR(goal)", "value": 0.54},
+        
+        {"model": "ProgPrompt", "metric": "ER", "value": 0.30},
+        {"model": "ProgPrompt", "metric": "Rej", "value": 0.07},
+        {"model": "ProgPrompt", "metric": "SR(LLM)", "value": 0.68},
+        {"model": "ProgPrompt", "metric": "SR(goal)", "value": 0.51},
+        
+        {"model": "MAP", "metric": "ER", "value": 0.64},
+        {"model": "MAP", "metric": "Rej", "value": 0.0},
+        {"model": "MAP", "metric": "SR(LLM)", "value": 0.31},
+        {"model": "MAP", "metric": "SR(goal)", "value": 0.27},
+        
+        {"model": "ReAct", "metric": "ER", "value": 0.74},
+        {"model": "ReAct", "metric": "Rej", "value": 0.10},
+        {"model": "ReAct", "metric": "SR(LLM)", "value": 0.48},
+        {"model": "ReAct", "metric": "SR(goal)", "value": 0.42},
+        
+        {"model": "PCA-EVAL", "metric": "ER", "value": 0.84},
+        {"model": "PCA-EVAL", "metric": "Rej", "value": 0.0},
+        {"model": "PCA-EVAL", "metric": "SR(LLM)", "value": 0.17},
+        {"model": "PCA-EVAL", "metric": "SR(goal)", "value": 0.35},
+        
+        {"model": "OURS", "metric": "ER", "value": 0.46},
+        {"model": "OURS", "metric": "Rej", "value": 0.54},
+        {"model": "OURS", "metric": "SR(LLM)", "value": 0.23},
+        {"model": "OURS", "metric": "SR(goal)", "value": 0.05}
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "model",
+        "type": "nominal",
+        "title": "模型",
+        "axis": {
+          "labelAngle": 45,
+          "titleFont": "SimSun",
+          "labelFont": "SimSun"
+        }
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "title": "value",
+        "scale": {"domain": [0, 0.9]},
+        "axis": {
+          "titleFont": "Times New Roman",
+          "labelFont": "Times New Roman"
+        }
+      },
+      "color": {
+        "field": "metric",
+        "type": "nominal",
+        "title": "指标",
+        "scale": {
+          "domain": ["ER", "Rej", "SR(LLM)", "SR(goal)"],
+          "range": ["#1f77b4", "#7fb3d3", "#ff7f0e", "#ffb366"]
+        }
+      },
+      "xOffset": {
+        "field": "metric",
+        "type": "nominal"
+      }
+    },
+    "config": {
+             "legend": {
+         "orient": "right",
+         "titleFontSize": 14,
+         "labelFontSize": 12,
+         "titleFont": "SimSun",
+         "labelFont": "Times New Roman"
+       },
+      "axis": {
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "titleFont": "Times New Roman",
+        "labelFont": "Times New Roman"
+      },
+      "title": {
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "font": "SimSun"
+      }
+    }
+  }
+  

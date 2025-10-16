@@ -1,0 +1,9 @@
+{
+  "reject": 92,
+  "rej_risk": 91,
+  "rej_llm": 1,
+  "rej_env": 0,
+  "success": 0,
+  "fail": 8,
+  "total": 100
+}

@@ -1,0 +1,18 @@
+{
+  "risk_pred": [],
+  "llm_risk": [],
+  "instr": [],
+  "accept_success": 12,
+  "accept_fail": 12,
+  "env_match": 3,
+  "reject": 28,
+  "rej_risk": 28,
+  "rej_llm": 0,
+  "rej_env": 0,
+  "total": 52,
+  "rejection_rate": 0.5384615384615384,
+  "goal_success_rate": 0.125,
+  "llm_success_rate": 0.5,
+  "execution_rate": 0.46153846153846156,
+  "avg_usage_time": 6.516630977392197
+}

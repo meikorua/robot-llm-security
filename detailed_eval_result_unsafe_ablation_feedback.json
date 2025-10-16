@@ -1,0 +1,13 @@
+{
+  "risk_pred": [],
+  "llm_risk": [],
+  "instr": [],
+  "accept_success": 12,
+  "accept_fail": 18,
+  "env_match": 3,
+  "reject": 22,
+  "rej_risk": 22,
+  "rej_llm": 0,
+  "rej_env": 0,
+  "total": 52
+}

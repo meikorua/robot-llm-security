@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "values": [
+      {"model": "Lota-Bench", "metric": "Abs_Rej", "value": 0.31},
+      {"model": "LLM-Planner", "metric": "Abs_Rej", "value": 0.00},
+      {"model": "CoELA", "metric": "Abs_Rej", "value": 0.14},
+      {"model": "MLDT", "metric": "Abs_Rej", "value": 0.20},
+      {"model": "ProgPrompt", "metric": "Abs_Rej", "value": 0.00},
+      {"model": "MAP", "metric": "Abs_Rej", "value": 0.32},
+      {"model": "ReAct", "metric": "Abs_Rej", "value": 0.00},
+      {"model": "PCA-EVAL", "metric": "Abs_Rej", "value": 0.77},
+      {"model": "OURS", "metric": "Abs_Rej", "value": 0.78}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "model",
+      "type": "nominal",
+      "title": "模型",
+      "sort": null,
+      "axis": {
+        "titleFont": "SimSun",
+        "labelFont": "Times New Roman"
+      }
+    },
+    "x": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "value",
+      "scale": {"domain": [0, 0.8]},
+      "axis": {
+        "titleFont": "Times New Roman",
+        "labelFont": "Times New Roman"
+      }
+    },
+    "color": {
+      "field": "metric",
+      "type": "nominal",
+      "title": "指标",
+      "scale": {
+        "domain": ["Abs_Rej"],
+        "range": ["#1f77b4"]
+      },
+      "legend": {
+        "orient": "right",
+        "titleFont": "SimSun",
+        "labelFont": "Times New Roman"
+      }
+    }
+  },
+  "config": {
+    "axis": {
+      "titleFontSize": 14,
+      "labelFontSize": 12
+    },
+    "legend": {
+      "titleFontSize": 14,
+      "labelFontSize": 12
+    }
+  }
+}

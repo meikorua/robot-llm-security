@@ -1,0 +1,101 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "模型性能对比",
+    "font": "SimSun",
+    "fontSize": 16,
+    "fontWeight": "bold"
+  },
+  "width": 800,
+  "height": 400,
+  "data": {
+    "values": [
+      {"model": "Lota-Bench", "metric": "C-Safe", "value": 0.49},
+      {"model": "Lota-Bench", "metric": "C-Unsafe", "value": 0.28},
+      {"model": "Lota-Bench", "metric": "Incomp", "value": 0.23},
+
+      {"model": "LLM-Planner", "metric": "C-Safe", "value": 0.14},
+      {"model": "LLM-Planner", "metric": "C-Unsafe", "value": 0.14},
+      {"model": "LLM-Planner", "metric": "Incomp", "value": 0.72},
+
+      {"model": "CoELA", "metric": "C-Safe", "value": 0.02},
+      {"model": "CoELA", "metric": "C-Unsafe", "value": 0.02},
+      {"model": "CoELA", "metric": "Incomp", "value": 0.95},
+
+      {"model": "MLDT", "metric": "C-Safe", "value": 0.49},
+      {"model": "MLDT", "metric": "C-Unsafe", "value": 0.28},
+      {"model": "MLDT", "metric": "Incomp", "value": 0.23},
+
+      {"model": "ProgPrompt", "metric": "C-Safe", "value": 0.50},
+      {"model": "ProgPrompt", "metric": "C-Unsafe", "value": 0.23},
+      {"model": "ProgPrompt", "metric": "Incomp", "value": 0.27},
+
+      {"model": "MAP", "metric": "C-Safe", "value": 0.24},
+      {"model": "MAP", "metric": "C-Unsafe", "value": 0.25},
+      {"model": "MAP", "metric": "Incomp", "value": 0.52},
+
+      {"model": "ReAct", "metric": "C-Safe", "value": 0.05},
+      {"model": "ReAct", "metric": "C-Unsafe", "value": 0.08},
+      {"model": "ReAct", "metric": "Incomp", "value": 0.88},
+
+      {"model": "PCA-EVAL", "metric": "C-Safe", "value": 0.06},
+      {"model": "PCA-EVAL", "metric": "C-Unsafe", "value": 0.06},
+      {"model": "PCA-EVAL", "metric": "Incomp", "value": 0.88},
+
+      {"model": "OURS", "metric": "C-Safe", "value": 0.47},
+      {"model": "OURS", "metric": "C-Unsafe", "value": 0.33},
+      {"model": "OURS", "metric": "Incomp", "value": 0.21}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "model",
+      "type": "nominal",
+      "title": "模型",
+      "axis": {
+        "labelAngle": 45,
+        "titleFont": "SimSun",
+        "labelFont": "Times New Roman"
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "value",
+      "scale": {"domain": [0, 1.0]},
+      "axis": {
+        "titleFont": "Times New Roman",
+        "labelFont": "Times New Roman"
+      }
+    },
+    "color": {
+      "field": "metric",
+      "type": "nominal",
+      "title": "指标",
+      "scale": {
+        "domain": ["C-Safe", "C-Unsafe", "Incomp"],
+        "range": ["#1f77b4", "#aec7e8", "#ff7f0e"]
+      },
+      "legend": {
+        "titleFont": "SimSun",
+        "labelFont": "Times New Roman"
+      }
+    },
+    "xOffset": {
+      "field": "metric",
+      "type": "nominal"
+    }
+  },
+  "config": {
+    "legend": {
+      "orient": "right",
+      "titleFontSize": 14,
+      "labelFontSize": 12
+    },
+    "axis": {
+      "titleFontSize": 14,
+      "labelFontSize": 12
+    }
+  }
+}
