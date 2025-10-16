@@ -113,6 +113,9 @@ models/
 *.log
 output*.log
 
+# 结果文件（可选：如果不想提交结果文件，取消下面的注释）
+# results/
+
 # 包含敏感信息的原始文件
 robot_llm_security.py
 

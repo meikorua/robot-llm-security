@@ -35,10 +35,11 @@ robot/
 ├── dataset/                       # 数据集目录
 ├── models/                        # 模型文件目录
 ├── hf_cache/                      # HuggingFace缓存
-├── abstract_eval_result_*.json    # 抽象评估结果
-├── detailed_eval_result_*.json    # 详细评估结果
-├── long_eval_result_*.json        # 长期评估结果
-├── chart_*.json                   # 图表数据
+├── results/                       # 评估结果目录
+│   ├── abstract_eval_result_*.json    # 抽象评估结果
+│   ├── detailed_eval_result_*.json    # 详细评估结果
+│   ├── long_eval_result_*.json        # 长期评估结果
+│   └── chart_*.json                   # 图表数据
 └── output*.log                    # 运行日志
 ```
 
@@ -68,12 +69,12 @@ python robot_llm_security.py
 
 ## 评估结果
 
-项目会生成多种评估结果文件：
+项目会生成多种评估结果文件，所有结果都保存在 `results/` 目录中：
 
-- `abstract_eval_result_*.json`: 抽象层安全评估结果
-- `detailed_eval_result_*.json`: 详细层安全评估结果  
-- `long_eval_result_*.json`: 长期规划评估结果
-- `chart_*.json`: 用于可视化的图表数据
+- `results/abstract_eval_result_*.json`: 抽象层安全评估结果
+- `results/detailed_eval_result_*.json`: 详细层安全评估结果  
+- `results/long_eval_result_*.json`: 长期规划评估结果
+- `results/chart_*.json`: 用于可视化的图表数据
 
 ## 注意事项
 
