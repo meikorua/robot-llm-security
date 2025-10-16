@@ -32,7 +32,7 @@ This project implements a safety behavior evaluation system for robots in the AI
 ```
 robot/
 ├── robot_llm_security_sample.py   # Sample evaluation script (sanitized)
-├── dataset/                       # SafeAgentBench dataset (4.8M, excluded from git)
+├── dataset/                       # SafeAgentBench dataset (Git submodule)
 ├── results/                       # Evaluation results directory
 │   ├── abstract_eval_result_*.json    # Abstract evaluation results
 │   ├── detailed_eval_result_*.json    # Detailed evaluation results
@@ -79,18 +79,29 @@ The project generates various evaluation result files, all saved in the `results
 
 - Ensure sufficient computational resources to run the AI2-THOR environment
 - Valid OpenAI API key and DeepSeek API key are required
-- The dataset directory (4.8M) is excluded from git to keep the repository lightweight
+- The dataset is included as a Git submodule for easy setup and updates
 - Runtime logs are excluded from git via .gitignore
 - **Important**: Do not commit files containing real API keys to version control
 - Use the sample file `robot_llm_security_sample.py` as a template and replace the placeholders
 
 ## Dataset
 
-The project uses the SafeAgentBench dataset which is excluded from the git repository due to its size (4.8M). To run the evaluation:
+The project uses the SafeAgentBench dataset as a Git submodule. To set up the dataset:
 
-1. Download the SafeAgentBench dataset separately
-2. Place it in the `dataset/` directory
-3. Ensure the dataset structure matches the expected format
+### Initial Setup
+```bash
+# Clone the repository with submodules
+git clone --recursive https://github.com/your-username/robot-llm-security.git
+
+# Or if you already cloned without --recursive:
+git submodule update --init --recursive
+```
+
+### Updating the Dataset
+```bash
+# Update the submodule to the latest version
+git submodule update --remote dataset/safeagentbench
+```
 
 ## License
 
